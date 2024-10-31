@@ -1,0 +1,26 @@
+[project]
+name = "my-python-boilerplate"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "ackness", email = "ackness8@gmail.com" }
+]
+dependencies = [
+    "ujson>=5.10.0",
+    "json5>=0.9.25",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = [
+    "pytest>=8.3.3",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "pre-commit>=4.0.1",
+]
+
+[tool.rye.scripts]
+tests = "pytest tests -v"

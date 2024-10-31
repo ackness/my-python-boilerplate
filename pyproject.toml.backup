@@ -1,0 +1,35 @@
+[project]
+name = "my-python-boilerplate"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "ackness", email = "ackness8@gmail.com" }
+]
+dependencies = [
+    "ujson>=5.10.0",
+    "json5>=0.9.25",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.3.3",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "pre-commit>=4.0.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/my_python_boilerplate"]
+
+[tool.rye.scripts]
+tests = "pytest tests -v"
